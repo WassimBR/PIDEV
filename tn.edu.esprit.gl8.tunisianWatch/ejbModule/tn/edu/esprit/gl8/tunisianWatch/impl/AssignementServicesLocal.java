@@ -32,6 +32,7 @@ public interface AssignementServicesLocal {
 	@GET
 	@Path("/deleteAssignement/{idassignement}")
 	@javax.ws.rs.Produces(MediaType.APPLICATION_JSON)
-	public boolean deleteAssignement(int idAssignement);
+	public boolean deleteAssignement(
+			@PathParam(value = "idassignement") int idAssignement);
 
 }

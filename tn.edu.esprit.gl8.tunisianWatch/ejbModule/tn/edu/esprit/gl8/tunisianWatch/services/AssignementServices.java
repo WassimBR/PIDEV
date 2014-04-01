@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.management.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -62,9 +61,9 @@ public class AssignementServices implements AssignementServicesLocal {
 
 	@Override
 	public List<Assignement> getAllAssignements() {
-		Query query = (Query) entityManager
+		javax.persistence.Query query = entityManager
 				.createQuery("select a from Assignement a");
-		return ((javax.persistence.Query) query).getResultList();
+		return query.getResultList();
 	}
 
 }
